@@ -1,5 +1,5 @@
 <template>
-  <img class="heroImg" />
+  <div class="heroImg" />
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .heroImg {
   width: 100%;
   min-height: 100vh;
@@ -19,5 +19,15 @@ export default {
   background-size: cover;
   background-position: 80% 0%;
   z-index: -1;
+}
+.heroImg::after {
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
 }
 </style>

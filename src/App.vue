@@ -72,11 +72,11 @@ export default {
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 body {
   font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .fade-enter-active,
@@ -90,13 +90,14 @@ body {
 
 .wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 30px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   &.flexStart {
     justify-content: start;
