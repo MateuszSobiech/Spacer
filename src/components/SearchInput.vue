@@ -1,14 +1,12 @@
 <template>
   <div class="searchWrapper">
-    <input id="search" name="search" :value="value" @input="handleChange" />
-    <!-- v-model="searchValue"
-      @input="handleInput"
-      placeholder="Moon"
-    <ul>
-      <li v-for="item in results" :key="item.data[0].nasa_id">
-        <p>{{ item.data[0].description }}</p>
-      </li>
-    </ul> -->
+    <input
+      id="search"
+      name="search"
+      :value="value"
+      @input="handleChange"
+      :class="{ dark }"
+    />
   </div>
 </template>
 
@@ -20,6 +18,10 @@ export default {
     value: {
       type: String,
       required: true,
+    },
+    dark: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -42,6 +44,7 @@ export default {
 
 input {
   margin-top: 25px;
+  margin-bottom: 40px;
   height: 30px;
   border: 0;
   border-bottom: 1px solid white;
@@ -59,5 +62,10 @@ input:focus {
   color: white;
   opacity: 0.7;
   font-size: 1rem;
+}
+
+.dark {
+  color: #171717;
+  border-bottom: 1px solid #171717;
 }
 </style>
